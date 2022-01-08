@@ -11,8 +11,8 @@ const config = {
     timeBetweenOrders: 10000,
     orderExpirationTime: 15000,
 
-    mainAliases: ["lc", "livecafe", "!cafe"],
-    openAliases: ["otwórz", "otworz", "otwoz", "otwarte"],
+    mainAliases: ["lc", "livecafe", "cafe"],
+    openAliases: ["open", "otwórz", "otworz", "otwoz", "otwarte"],
     closeAliases: ["close", "closed", "zamknij", "zamkniete", "zamknięte"],
     serveAliases: ["serve", "serving", "podaj", "serwuj", "zaserwuj", "daj", "give", "daje"],
     products: {
@@ -32,7 +32,7 @@ const config = {
 const status = {
     isDay: false,
     isOpen: false,
-    leaderboard = [],
+    leaderboard: [],
     order: null
 }
 
@@ -47,9 +47,9 @@ $(document).ready(() => {
 
     // Day night cycle
     setInterval(() => {
-        if (isDay) goNight();
+        if (status.isDay) goNight();
         else goDay();
-    }, conifg.dayLength)
+    }, config.dayLength)
 
 
     ComfyJS.onCommand = ( user, command, message, flags, extra ) => {
@@ -151,10 +151,9 @@ const refreshList = () => {
     $("#lb-content").fadeOut(1000, () => {
         $("#lb-content").html("");
         let lb = status.leaderboard.sort((a,b) => b.amount - a.amount)
-        console.log(lb);
         lb.forEach((v, i) => {
             $("#lb-content").append(`
-                <p class='lb-row'>${i+1}. ${v.user}: $${v.amount.toFixed(2)} (${(v.lastAdded > 0) ? "+" : "-"}${v.lastAdded.toFixed(2)})</p>
+                <p class='lb-row'>${(i+1)}. ${v.user}: $${v.amount.toFixed(2)} (${(v.lastAdded > 0) ? "+" : "-"}${v.lastAdded.toFixed(2)})</p>
             `)
         })
         $("#lb-content").fadeIn(1000)
@@ -174,7 +173,7 @@ const newOrder = () => {
         "completed": false
     }
 
-    $("#order").text(order.text);
+    $("#order").text(status.order.text);
     
     // let left = Math.floor(Math.random() * 1800);
     // let top = Math.floor(Math.random() * 900);
