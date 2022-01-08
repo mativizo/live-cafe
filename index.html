@@ -5,8 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Cafe</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
+
+    <!-- Backgrounds -->
+    <img id="night-bg" src="src/img/night-background.png" alt="">
+    <img id="day-bg" src="src/img/day-background.png" alt="" class="hidden">
+
+    <!-- Base -->
+    <img src="src/img/cafe-base.png" alt="" id="base">
+
+
+    <div id="leaderboard">
+        <h3>Live Cafe Leaderboard:</h3>
+        <div id="lb-content"></div>
+    </div>
+
+    <div id="order" class="hidden"></div>
+
+    <!-- Open/Close info -->
+    <img src="src/img/opened.png" alt="" id="open" class="hidden">
+    <img src="src/img/closed.png" alt="" id="close">
+
     
+    <!-- Top Layer -->
+    <img src="img/night-masking.png" alt="" id="night-mask">
+
+        
+    <!-- JS -->
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+    <script src="src/js/scripts.js"></script>
 </body>
 </html>
