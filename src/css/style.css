@@ -1,2 +1,59 @@
 /* Live Cafe */
 /* https://github.com/mativizo/live-cafe */
+
+* { margin: 0; padding:0; box-sizing: border-box; }
+
+
+/* RESET */
+html, body {
+    overflow: hidden;
+    font-family: 'Leckerli One', cursive;
+}
+
+/* Layers */
+.layer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1920px;
+    height: 1080px;
+}
+
+
+
+#leaderboard {
+    position: absolute;
+    left: 75px;
+    top: 480px;
+    text-align:center;
+    padding: 10px;
+    width: 505px;
+    height: 440px;
+    color: black;
+    font-size: 26px;}
+
+#order {
+    min-width: 50px;
+    padding: 10px;
+    border: 1px solid black;
+    background: white;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    border-radius: 10px;
+    font-size: 26px;
+}
+
+
+/* Utility */
+.hidden {
+    display: none;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.done::before {
+    content: '✔ ';
+}
